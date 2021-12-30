@@ -10,6 +10,31 @@ module.exports = {
         clean: true,
     },
     plugins: [
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        }),
     ],
+    module: {
+        rules: [
+          {
+            test: /\.html$/i,
+            loader: "html-loader",
+          },
+          {
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: "babel-loader",
+            },
+          },
+          {
+            test: /\.css$/i,
+            use: ["style-loader", "css-loader"],
+          },
+          {
+            test: /\.(png|jpg|gif)$/i,
+            type: "asset",
+          },
+        ],
+      },
 };
