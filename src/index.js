@@ -1,1 +1,5 @@
-console.log('Hello there!')
+const a = {
+    adios: ''
+};
+
+console.log(a?.hola)

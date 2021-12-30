@@ -11,7 +11,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            title: 'WebpackNizer!'
         }),
     ],
     module: {
@@ -25,6 +26,9 @@ module.exports = {
             exclude: /node_modules/,
             use: {
               loader: "babel-loader",
+              options: {
+                  presets: ['@babel/preset-env']
+              }
             },
           },
           {
@@ -36,5 +40,5 @@ module.exports = {
             type: "asset",
           },
         ],
-      },
+    },
 };
