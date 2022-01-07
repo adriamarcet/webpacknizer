@@ -7,6 +7,8 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack serve --open --config webpack.dev.js",
+    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint --ignore-path .gitignore . --ext .js,.html",
     "start": "http-server dist",
     "test": "test"
   },
@@ -28,18 +30,27 @@
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
+    "@babel/eslint-parser": "^7.5.4",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.0.0",
+    "mini-css-extract-plugin": "^2.4.6",
+    "prettier": "^2.5.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.2",
     "webpack-merge": "^5.8.0"
   },
-  "dependencies": {
-    "mini-css-extract-plugin": "^2.4.5"
-  }
+  "dependencies": {}
 }
