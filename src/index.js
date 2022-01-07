@@ -1,5 +1,7 @@
-const a = {
-    adios: ''
-};
+import './assets/css/globals.css';
+import responsiveImage from './assets/images/ousama.jpg';
 
-console.log(a?.hola)
+const pictureImg = new Image();
+pictureImg.src = responsiveImage;
+
+document.body.appendChild(pictureImg);

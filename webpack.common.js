@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: "./src/index.js",
-    devtool: 'inline-source-map',
+    devtool: 'inline-source-map', 
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
@@ -11,34 +11,35 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html',
-            title: 'WebpackNizer!'
+          favicon: "./src/favicon.ico",
+          template: './src/index.html',
+          title: 'WebpackNizer!'
         }),
     ],
     module: {
-        rules: [
-          {
-            test: /\.html$/i,
-            loader: "html-loader",
+      rules: [
+        {
+          test: /\.html$/i,
+          loader: "html-loader",
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader",
           },
-          {
-            test: /\.m?js$/,
-            exclude: /node_modules/,
-            use: {
-              loader: "babel-loader",
-              options: {
-                  presets: ['@babel/preset-env']
-              }
-            },
-          },
-          {
-            test: /\.css$/i,
-            use: ["style-loader", "css-loader"],
-          },
-          {
-            test: /\.(png|jpg|gif)$/i,
-            type: "asset",
-          },
-        ],
+        },
+        {
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader"],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/[name][hash][ext]'
+          }
+        },
+      ],
     },
 };
