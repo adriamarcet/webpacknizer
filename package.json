@@ -10,7 +10,9 @@
     "lint:fix": "npm run lint -- --fix",
     "lint": "eslint --ignore-path .gitignore . --ext .js,.html",
     "start": "http-server dist",
-    "test": "test"
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -29,10 +31,14 @@
   "homepage": "https://github.com/adriamarcet/wepacknizer#readme",
   "devDependencies": {
     "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.7",
     "@babel/eslint-parser": "^7.5.4",
+    "@babel/preset-env": "^7.16.7",
+    "@testing-library/cypress": "^7.0.4",
+    "@testing-library/dom": "^7.30.1",
+    "@testing-library/jest-dom": "^5.11.10",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
+    "cypress": "^9.2.0",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-cypress": "^2.11.2",
@@ -44,6 +50,7 @@
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.0.0",
+    "jest": "^26.6.3",
     "mini-css-extract-plugin": "^2.4.6",
     "prettier": "^2.5.1",
     "style-loader": "^3.3.1",
